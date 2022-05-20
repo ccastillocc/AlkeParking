@@ -1,3 +1,3 @@
 package com.example.alkeparking
 
-data class ParkingSpace(var num : Int)
+data class ParkingSpace(var vehicle: Vehicle)

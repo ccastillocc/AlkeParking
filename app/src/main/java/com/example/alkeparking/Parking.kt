@@ -1,3 +1,3 @@
 package com.example.alkeparking
 
-data class Parking(var plate : String)
+data class Parking(var vehicles : MutableSet<Vehicle>)
