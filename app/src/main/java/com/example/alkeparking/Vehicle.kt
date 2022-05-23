@@ -1,8 +1,10 @@
 package com.example.alkeparking
 
-data class Vehicle(val plate: String){
+import java.util.*
 
-    var color = "rojo"
+data class Vehicle(var plate: String, var type : String, var checkinTime : Calendar, var discountCard: String?){
+
+
     override fun equals(other: Any?): Boolean {
         if (other is Vehicle) {
                 return this.plate == other.plate

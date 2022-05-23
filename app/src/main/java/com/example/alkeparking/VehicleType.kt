@@ -1,10 +1,10 @@
 package com.example.alkeparking
 
 enum class VehicleType(var type:String, val rate:Int){
-    AUTO("auto", 20),
-    MOTO("moto", 15),
-    MINIBUS ("minibus", 25),
-    BUS("bus", 30)
+    CAR("CAR", 20),
+    MOTORCYCLE("MOTORCYCLE", 15),
+    MINIBUS ("MINIBUS", 25),
+    BUS("BUS", 30)
 }
 
 
