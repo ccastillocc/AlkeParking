@@ -9,7 +9,7 @@ data class ParkingSpace(var vehicle: Vehicle){
     val parkedtime : Long
         get() = (Calendar.getInstance().timeInMillis - vehicle.checkinTime.timeInMillis) / MINUTES_IN_MILISECONDS
 
-    fun getHora(){
-        println(this.vehicle.checkinTime)
+    fun getHora():Long{
+        return(parkedtime)
     }
 }
