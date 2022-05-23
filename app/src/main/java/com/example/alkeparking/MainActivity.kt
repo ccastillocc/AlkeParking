@@ -10,10 +10,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val car = Vehicle( "AA111AA", "CAR", Calendar.getInstance(), "DISCOUNT_CARD_001")
-        val moto = Vehicle( "B222BBB", "MOTORCYCLE", Calendar.getInstance())
-        val minibus = Vehicle( "AA111AA", "MINIBUS", Calendar.getInstance())
-        val bus = Vehicle( "AA111AA", "BUS", Calendar.getInstance(), "DISCOUNT_CARD_002")
+        val car = Vehicle( "AASE67", "CAR", Calendar.getInstance(), "DISCOUNT_CARD_001")
+        val moto = Vehicle( "BXFT44", "MOTORCYCLE", Calendar.getInstance(), null)
+        val minibus = Vehicle( "AADC63", "MINIBUS", Calendar.getInstance(), null)
+        val bus = Vehicle( "AHBF45", "BUS", Calendar.getInstance(), "DISCOUNT_CARD_002")
         val parking = Parking(mutableSetOf(car, moto, minibus, bus))
 
         println(parking.vehicles.contains(car))
