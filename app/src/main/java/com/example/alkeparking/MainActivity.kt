@@ -21,6 +21,11 @@ class MainActivity : AppCompatActivity() {
         println(parking.vehicles.contains(minibus))
         println(parking.vehicles.contains(bus))
 
+        //val car2 = Vehicle( "AASE67", "CAR", Calendar.getInstance(), "DISCOUNT_CARD_003")
+        //val isCarInserted = parking.vehicles.add(car2)
+        //println(isCarInserted)
+        //parking.vehicles.remove(moto)
+        //println(parking.vehicles.size)
     }
 
     
