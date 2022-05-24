@@ -12,4 +12,8 @@ data class ParkingSpace(var vehicle: Vehicle){
     fun getHora():Long{
         return(parkedtime)
     }
+
+    fun checkOutVehicle(plate : String) : String{
+        return plate
+    }
 }
