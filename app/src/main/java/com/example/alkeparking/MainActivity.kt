@@ -61,14 +61,15 @@ class MainActivity : AppCompatActivity() {
         vehicleList.add(vehicleAux)
         vehicleAux = Vehicle( "AHBF49", "BUS", Calendar.getInstance(), "DISCOUNT_CARD_010")
         vehicleList.add(vehicleAux)
-        vehicleAux = Vehicle( "PTKT58", "CAR", Calendar.getInstance(), "DISCOUNT_CARD_011")
+        vehicleAux = Vehicle( "PAAA88", "CAR", Calendar.getInstance(), "DISCOUNT_CARD_011")
         vehicleList.add(vehicleAux)
         println("Tamaño ${vehicleList.size}")
 
         vehicleList.forEach{
             println(parking.addVehicle(it))
         }
-
+        //val a : String = "Error"
+        //parking.checkOutVehicle("PAAA88")
 
     }
 
