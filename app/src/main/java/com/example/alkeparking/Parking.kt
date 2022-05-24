@@ -35,9 +35,4 @@ data class Parking(var vehicles : MutableSet<Vehicle>, var cupo : Int){
         return 0
     }
 
-    /*fun getHora():Long{
-        return(parkedtime)
-    }*/
-
-
 }
