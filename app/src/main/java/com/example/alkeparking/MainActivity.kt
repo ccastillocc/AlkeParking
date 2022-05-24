@@ -67,6 +67,7 @@ class MainActivity : AppCompatActivity() {
 
         vehicleList.forEach{
             println(parking.addVehicle(it))
+            println(parking.vehicles.size)
         }
 
 
