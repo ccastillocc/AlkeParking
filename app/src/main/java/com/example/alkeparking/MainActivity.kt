@@ -2,7 +2,7 @@ package com.example.alkeparking
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import java.util.Calendar
+import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -57,21 +57,34 @@ class MainActivity : AppCompatActivity() {
         vehicleList.add(vehicleAux)
         vehicleAux = Vehicle( "BXFT48", "MOTORCYCLE", Calendar.getInstance(), null)
         vehicleList.add(vehicleAux)
-        vehicleAux = Vehicle( "AADC67", "MINIBUS", Calendar.getInstance(), null)
+        var ingrDate : Calendar = Calendar.getInstance()
+        ingrDate.set(2022,4,25,12,0,0)
+        println("fecha nueva ${ingrDate.time}")
+        vehicleAux = Vehicle( "AADC67", "MINIBUS", ingrDate, null)
         vehicleList.add(vehicleAux)
         vehicleAux = Vehicle( "AHBF49", "BUS", Calendar.getInstance(), "DISCOUNT_CARD_010")
         vehicleList.add(vehicleAux)
         vehicleAux = Vehicle( "PAAA88", "CAR", Calendar.getInstance(), "DISCOUNT_CARD_011")
         vehicleList.add(vehicleAux)
-        println("Tamaño ${vehicleList.size}")
+
 
         vehicleList.forEach{
             println(parking.addVehicle(it))
+            println("Tamaño ${parking.vehicles.size}")
         }
-        //val a : String = "Error"
-        //parking.checkOutVehicle("PAAA88")
+
+        val parkspace = ParkingSpace(vehicleAux,parking)
+        parkspace.checkOutVehicle("AADC67")
 
     }
+
+    /*fun exito(num : Int){
+        println(num)
+    }
+
+    fun error(str : String){
+        println("str")
+    }*/
 
     
 }

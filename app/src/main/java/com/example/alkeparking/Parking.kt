@@ -16,23 +16,5 @@ data class Parking(var vehicles : MutableSet<Vehicle>, var cupo : Int){
          return message
     }
 
-    fun checkOutVehicle(plate : String, onSuccess: (Int) -> Unit, onError: (String) -> Unit)
-    {
-        vehicles.forEach(){
-            if(it.plate.equals(plate)) {
-
-                val total = calculateFee(it.type,it.checkinTime)
-                vehicles.remove(it)
-                onSuccess(total)
-            }else{
-                onError("Sorry, the check-out failed")
-            }
-
-        }
-    }
-
-    fun calculateFee(type : String, checkinTime: Calendar) : Int{
-        return 0
-    }
 
 }
