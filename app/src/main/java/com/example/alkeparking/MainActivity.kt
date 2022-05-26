@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         val moto = Vehicle( "BXFT44", "MOTORCYCLE", Calendar.getInstance(), null)
         val minibus = Vehicle( "AADC63", "MINIBUS", Calendar.getInstance(), null)
         val bus = Vehicle( "AHBF45", "BUS", Calendar.getInstance(), "DISCOUNT_CARD_002")
-        val parking = Parking(mutableSetOf(car, moto, minibus, bus),20)
+        val parking = Parking(mutableSetOf(car, moto, minibus, bus),20, Pair(0,0))
 
         //EJERCICIO 5
         //println(parking.vehicles.contains(car))
@@ -57,13 +57,14 @@ class MainActivity : AppCompatActivity() {
         vehicleList.add(vehicleAux)
         vehicleAux = Vehicle( "BXFT48", "MOTORCYCLE", Calendar.getInstance(), null)
         vehicleList.add(vehicleAux)
-        val ingrDate : Calendar = Calendar.getInstance()
+        var ingrDate : Calendar = Calendar.getInstance()
         ingrDate.set(2022,4,26,12,0,0)
-        //println("fecha nueva ${ingrDate.time}")
         val vehicleAux2 = Vehicle( "AADC67", "MINIBUS", ingrDate, "DISCOUNT_CARD_012")
         vehicleList.add(vehicleAux2)
-        vehicleAux = Vehicle( "AHBF49", "BUS", Calendar.getInstance(), "DISCOUNT_CARD_010")
-        vehicleList.add(vehicleAux)
+        ingrDate = Calendar.getInstance()
+        ingrDate.set(2022,4,26,16,0,0)
+        val vehicleAux3 = Vehicle( "AHBF49", "BUS", ingrDate, "DISCOUNT_CARD_010")
+        vehicleList.add(vehicleAux3)
         vehicleAux = Vehicle( "PAAA88", "CAR", Calendar.getInstance(), "DISCOUNT_CARD_011")
         vehicleList.add(vehicleAux)
 
@@ -74,8 +75,11 @@ class MainActivity : AppCompatActivity() {
 
         val parkspace = ParkingSpace(vehicleAux2,parking)
         parkspace.checkOutVehicle(vehicleAux2.plate)
+        val parkspace2 = ParkingSpace(vehicleAux3,parking)
+        parkspace2.checkOutVehicle(vehicleAux3.plate)
 
-
+        parking.showResults()
+        parking.showVehicles()
     }
 
     

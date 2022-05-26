@@ -4,7 +4,7 @@ import java.util.Calendar
 
 const val MINUTES_IN_MILISECONDS : Int = 60000
 
-data class ParkingSpace(var vehicle: Vehicle, val parking : Parking){
+data class ParkingSpace(var vehicle: Vehicle, var parking : Parking){
 
     val parkedtime : Long
         get() = (Calendar.getInstance().timeInMillis - vehicle.checkinTime.timeInMillis) / MINUTES_IN_MILISECONDS
@@ -40,8 +40,11 @@ data class ParkingSpace(var vehicle: Vehicle, val parking : Parking){
     }
 
     fun onSuccess(total : Int){
+        val retiredcars = parking.results.first + 1
+        val newtotal = parking.results.second + total
+        parking.results = Pair(retiredcars,newtotal)
         println("Your fee is $total. Come back soon.")
-        println("There are ${parking.vehicles.size} vehicles now")
+        //println("There are ${parking.vehicles.size} vehicles now")
     }
 
     fun onError(errMessage : String){

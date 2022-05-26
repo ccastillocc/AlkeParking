@@ -1,10 +1,8 @@
 package com.example.alkeparking
 
-import java.util.Calendar
 
 
-data class Parking(var vehicles : MutableSet<Vehicle>, var cupo : Int){
-
+data class Parking(var vehicles : MutableSet<Vehicle>, var cupo : Int, var results : Pair<Int,Int>){
 
      fun addVehicle(vehicle : Vehicle): String{
 
@@ -17,5 +15,14 @@ data class Parking(var vehicles : MutableSet<Vehicle>, var cupo : Int){
          return message
     }
 
+    fun showResults(){
+        println("${results.first} vehicles have checked out and have earnings of ${results.second}")
+    }
+
+    fun showVehicles(){
+        vehicles.forEach(){
+            println("Plate ${it.plate}")
+        }
+    }
 
 }
