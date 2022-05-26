@@ -57,11 +57,11 @@ class MainActivity : AppCompatActivity() {
         vehicleList.add(vehicleAux)
         vehicleAux = Vehicle( "BXFT48", "MOTORCYCLE", Calendar.getInstance(), null)
         vehicleList.add(vehicleAux)
-        var ingrDate : Calendar = Calendar.getInstance()
-        ingrDate.set(2022,4,25,12,0,0)
-        println("fecha nueva ${ingrDate.time}")
-        vehicleAux = Vehicle( "AADC67", "MINIBUS", ingrDate, null)
-        vehicleList.add(vehicleAux)
+        val ingrDate : Calendar = Calendar.getInstance()
+        ingrDate.set(2022,4,26,12,0,0)
+        //println("fecha nueva ${ingrDate.time}")
+        val vehicleAux2 = Vehicle( "AADC67", "MINIBUS", ingrDate, "DISCOUNT_CARD_012")
+        vehicleList.add(vehicleAux2)
         vehicleAux = Vehicle( "AHBF49", "BUS", Calendar.getInstance(), "DISCOUNT_CARD_010")
         vehicleList.add(vehicleAux)
         vehicleAux = Vehicle( "PAAA88", "CAR", Calendar.getInstance(), "DISCOUNT_CARD_011")
@@ -70,21 +70,13 @@ class MainActivity : AppCompatActivity() {
 
         vehicleList.forEach{
             println(parking.addVehicle(it))
-            println("Tamaño ${parking.vehicles.size}")
         }
 
-        val parkspace = ParkingSpace(vehicleAux,parking)
-        parkspace.checkOutVehicle("AADC67")
+        val parkspace = ParkingSpace(vehicleAux2,parking)
+        parkspace.checkOutVehicle(vehicleAux2.plate)
+
 
     }
-
-    /*fun exito(num : Int){
-        println(num)
-    }
-
-    fun error(str : String){
-        println("str")
-    }*/
 
     
 }

@@ -13,6 +13,7 @@ data class Parking(var vehicles : MutableSet<Vehicle>, var cupo : Int){
              vehicles.add(vehicle) -> "Welcome to AlkeParking!"
              else -> "Sorry, the has check-in failed"
          }
+         println("Vehicle List size ${vehicles.size}")
          return message
     }
 
